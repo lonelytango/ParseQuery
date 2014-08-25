@@ -1,14 +1,24 @@
 $(function(){
 	
 	//REQUIRED
-	var parseApplicationId = ""
-	var parseJavascriptKey = ""
-	var parseObjectName = ""
+	//var parseApplicationId = ""
+	//var parseJavascriptKey = ""
+	//var parseObjectName = ""
 	
 	// UNCOMMENT FOR TEST SAMPLE...
-	// var parseApplicationId = "honEIteZ5FGjJQie8lizH32XBp9pF9AagskeZaaH"
-	// var parseJavascriptKey = "0WZBdubyhvLXs5F0AdTnreqkAQIDNPYhqk9lDO2s"
-	// var parseObjectName = "JokeObject"
+	var parseApplicationId = "honEIteZ5FGjJQie8lizH32XBp9pF9AagskeZaaH"
+	var parseJavascriptKey = "0WZBdubyhvLXs5F0AdTnreqkAQIDNPYhqk9lDO2s"
+	var parseObjectName = "JokeObject"
+	
+	var sampleParseObject = new Array();
+	sampleParseObject["joke"] = "sample joke"
+	sampleParseObject["author"] = "sample author"
+	sampleParseObject["thumbs_up"] = 0
+	sampleParseObject["thumbs_down"] = 0
+	
+	for (key in sampleParseObject) {
+		console.log('Key: ' + key + ' Value: ' + sampleParseObject[key])
+	}
 	
 	if (parseApplicationId.length == 0) {
 		alert('Please set Application ID in the code.')
@@ -117,10 +127,11 @@ $(function(){
 						editTableElements += ('<tr><td>Created At</td><td><input type="text" name="created_at" value="' + sampleObject.createdAt +'" readonly></input></td></tr>')
 						$editTable.last().append(editTableElements)
 						$('#search_select').append(selectOptions)
+						
+						//Set to first loaded flag to true
+						isEditPanelLoaded = true
 					}
 					
-					//Set to first loaded flag to true
-					isEditPanelLoaded = true
 				}
 				
 				
@@ -167,6 +178,12 @@ $(function(){
 			// The request failed
 		  }
 	})
+	
+	function generateEditTable() {
+		
+	}
+	
+	
 	
 	function goToPage(pageNumber) {
 		if (pageNumber != currentPage) {
@@ -353,9 +370,5 @@ $(function(){
 			$('[name=' + key + ']').val(element)
 		}
 		currentIndex = selectedIndex
-	});
-	
-	//UI
-	$('button').button()
-	
+	});	
 })
