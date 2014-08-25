@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<title>Parse</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="script/jquery.js"></script>
+	<script src="script/jquery-dateFormat.min.js"></script>
+	<script src="script/parse-1.2.19.min.js"></script>
+	<script src="script/parse.js"></script>
+  </head>
+  <body>
+	  <div id="container">
+		  <div id="menu_panel">
+			  <div id="action_panel">
+			  	  <button id="new_button">Create New</button>
+			  </div>
+			  <table id="menu_table">
+			  </table>
+			  <div id="paging_panel">
+				  
+				  <button id="prev_button" type="button"><<</button>
+				  <input id="page_setter" type="number" value=1></input> 
+				  of 
+				  <span id="total_pages">0</span>
+				  <button id="next_button" type="button">>></button>
+				  <button id="go_page_button" type="button">Go</button>
+			  </div>
+<!-- 		  	  <div id="search_panel">
+			  	  Search by
+			  	  <select id="search_select">
+			  	  </select>
+			  	  <input id="search_text" type="text"></input>
+			  	  <button id="search_button" type="button">Search</button>
+			  </div> -->
+	  	  </div>
+	  	  <div id="edit_panel">
+		  	  <table id="edit_table">
+			  </table>
+			  
+			  <span id="edit_buttons">
+			  	<button id="update_button" type="button">Update</button>
+			  	<button id="delete_button" type="button">Delete</button>
+			  <span>
+			  <button id="save_button" type="button" hidden>Save</button>
+		  </div>
+	  </div>
+  </body>
+</html>

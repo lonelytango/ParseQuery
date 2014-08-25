@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    padding-top: 20px;
+    padding-left: 20px;
+    height: auto;
+    margin: auto;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+#menu_panel {
+    width: 49%;
+    height: 100vh;
+    border-right: 1px #000 solid;
+    float: left;
+}
+
+#edit_panel {
+    width: 49%;
+    height: 100vh;
+    float: right;
+}
+
+#menu_table tr td {
+    width: auto;
+    border:1px solid black;
+    border-collapse:collapse;
+    text-align: center;
+}
+
+#edit_table td {
+    vertical-align: middle;
+}
+
+#paging_panel {
+    margin-top: 10px;
+}
+
+#page_setter {
+    width: 30px;
+    text-align: right;
+}
+
+#go_page_button {
+    margin-left: 10px
+}
+
+#action_panel {
+    margin-top: 10px;
+}
+
+#search_panel {
+    margin-top: 10px
+}
+
+.menu_row:hover {
+    background: yellow;
+    cursor: pointer
+}
+
+.highlight {
+    background: yellow;
+}
+
