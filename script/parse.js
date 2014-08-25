@@ -1,11 +1,27 @@
 $(function(){
 	
 	//REQUIRED
-	Parse.initialize("honEIteZ5FGjJQie8lizH32XBp9pF9AagskeZaaH", "0WZBdubyhvLXs5F0AdTnreqkAQIDNPYhqk9lDO2s")
-	var ParseObject = Parse.Object.extend("JokeObject")
+	var parseApplicationId = ""
+	var parseJavascriptKey = ""
+	var parseObjectName = ""
 	
-	//Parse.initialize("RB7dgecnuNt64hOytszM106Qb8Om4eXtwIyhBzu9", "hNYlQ6rdwzgV3LJYQhxMPtInqBYYrl2xkJTCHVSh")
-	//var ParseObject = Parse.Object.extend("Book")
+	// UNCOMMENT FOR TEST SAMPLE...
+	// var parseApplicationId = "honEIteZ5FGjJQie8lizH32XBp9pF9AagskeZaaH"
+	// var parseJavascriptKey = "0WZBdubyhvLXs5F0AdTnreqkAQIDNPYhqk9lDO2s"
+	// var parseObjectName = "JokeObject"
+	
+	if (parseApplicationId.length == 0) {
+		alert('Please set Application ID in the code.')
+		return
+	
+	} else if (parseJavascriptKey.length == 0) {
+		alert('Please set Javascript Key in the code.')
+		return
+		
+	} else if (parseObjectName.length == 0) {
+		alert('Please set Parse Object name')
+		return
+	}
 	
 	//ADJUSTABLE PARAMETER
 	var objectsPerPage = 20
@@ -13,6 +29,13 @@ $(function(){
 	var fetchList = [] //['isbn', 'name']
 	
 	
+	
+	
+	
+	//======= CODE STARTS =======
+	
+	Parse.initialize(parseApplicationId, parseJavascriptKey)
+	var ParseObject = Parse.Object.extend(parseObjectName)
 	
 	var query = new Parse.Query(ParseObject)
 	var currentPage = 1
